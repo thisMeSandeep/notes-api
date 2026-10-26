@@ -19,7 +19,11 @@ jobs:
         run: echo "Installing deps on ${{runner.os}}"
       - name: run tests  
         run: echo "Running tests"
-  
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print lint
+        run: echo lint  
         
     
     
