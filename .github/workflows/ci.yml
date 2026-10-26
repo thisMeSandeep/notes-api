@@ -1,0 +1,25 @@
+name: ci 
+
+#  Triggers - What  starts the workflow 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+# Jobs - Jobs to run in a runner 
+jobs:
+  test:     # Job name , that will run in a runner 
+    runs-on: ubuntu-latest  # machine to run a job on
+    # steps inside the job
+    steps:
+      - name: Checkout source code 
+        uses: actions/checkout@v7 # step: a reusable action
+      - name: Install deps
+        run: echo "Installing deps on ${{runner.os}}"
+      - name: run tests  
+        run: echo "Running tests"
+  
+        
+    
+    
