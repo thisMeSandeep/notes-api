@@ -6,7 +6,16 @@
   "author": "",
   "type": "commonjs",
   "main": "index.js",
+  "types": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test:unit": "node --test dist/test/unit/*.test.js",
+    "test:integration": "node --test dist/test/integration/*.test.js",
+    "pretest": "npm run build",
+    "test": "npm run test:unit && npm run test:integration"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2"
   }
 }
