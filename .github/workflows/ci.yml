@@ -11,6 +11,7 @@ on:
 jobs:
   test:     # Job name , that will run in a runner 
     runs-on: ubuntu-latest  # machine to run a job on
+    needs: lint
     # steps inside the job
     steps:
       - name: Checkout source code 
