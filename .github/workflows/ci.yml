@@ -20,11 +20,15 @@ jobs:
         run: echo "Installing deps on ${{runner.os}}"
       - name: run tests  
         run: echo "Running tests"
+      - name: list fils
+        run: ls     
   lint:
     runs-on: ubuntu-latest
     steps:
       - name: print lint
         run: echo lint  
+      - name: create a txt file
+        run: echo hi > out.txt    
         
     
     
